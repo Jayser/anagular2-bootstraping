@@ -4,7 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         app: './app/index.ts',
-        vendors: ['zone.js', 'reflect-metadata']
+        vendors: [
+            'rxjs',
+            'zone.js',
+            'reflect-metadata'
+        ]
     },
     output: {
         filename: '[name].js?[hash]',
@@ -12,18 +16,18 @@ module.exports = {
         path: './dist'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.js']
     },
     module: {
         exprContextCritical: false,
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 enforce: "pre",
                 loader: "tslint-loader"
             },
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 include: /app/,
                 use: { loader: 'awesome-typescript-loader' }
             }

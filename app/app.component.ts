@@ -1,17 +1,16 @@
-import { Component } from "@angular/core";
-import { map } from "lodash";
+import { AfterViewInit, Component } from "@angular/core";
+import { padStart } from "lodash";
 
 @Component({
     selector: "my-app",
     template: `<h1>Hello {{name}}</h1>`,
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
     private name = "Angular";
 
-    constructor() {
-        map([], (item) => {
-            return item;
-        });
+    public ngAfterViewInit() {
+        console.log(padStart(" Hello TypeScript!", 20, "@"));
     }
 }
+
