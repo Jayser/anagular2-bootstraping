@@ -1,0 +1,31 @@
+{
+  "name": "angular2-bootstraping",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Jayser/angular2-bootstraping.git",
+  "author": "sergii.azizov",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.35",
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "html-webpack-plugin": "^2.26.0",
+    "reflect-metadata": "^0.1.9",
+    "rxjs": "^5.0.3",
+    "tslint": "^4.3.1",
+    "tslint-loader": "^3.3.0",
+    "typescript": "^2.1.5",
+    "typings": "^2.1.0",
+    "webpack": "v2.2.0-rc.4",
+    "zone.js": "^0.7.5"
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.3",
+    "@angular/compiler": "^2.4.3",
+    "@angular/core": "^2.4.3",
+    "@angular/platform-browser": "^2.4.3",
+    "@angular/platform-browser-dynamic": "^2.4.3"
+  }
+}
