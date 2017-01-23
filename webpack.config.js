@@ -29,7 +29,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 include: /app/,
-                use: { loader: 'awesome-typescript-loader' }
+                loader: 'awesome-typescript-loader'
             }
         ]
     },
