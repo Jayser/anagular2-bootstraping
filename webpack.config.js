@@ -1,45 +1,19 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+/**
+ * @author: @AngularClass
+ */
 
-module.exports = {
-    entry: {
-        app: './app/index.ts',
-        vendors: [
-            'rxjs',
-            'zone.js',
-            'reflect-metadata'
-        ]
-    },
-    output: {
-        filename: '[name].js?[hash]',
-        publicPath: './',
-        path: './dist'
-    },
-    resolve: {
-        extensions: ['.ts', '.js']
-    },
-    module: {
-        exprContextCritical: false,
-        rules: [
-            {
-                test: /\.ts$/,
-                enforce: "pre",
-                loader: "tslint-loader"
-            },
-            {
-                test: /\.ts$/,
-                include: /app/,
-                loader: 'awesome-typescript-loader'
-            }
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Angular2',
-            template: 'app/index.html',
-            chunksSortMode: (a, b) => a.names[0] > b.names[0] ? -1 : 1
-        })
-    ],
-    watch: true,
-    devtool: 'source-map'
-};
+// Look in ./config folder for webpack.dev.js
+switch (process.env.NODE_ENV) {
+  case 'prod':
+  case 'production':
+    module.exports = require('./config/webpack.prod')({env: 'production'});
+    break;
+  case 'test':
+  case 'testing':
+    module.exports = require('./config/webpack.test')({env: 'test'});
+    break;
+  case 'dev':
+  case 'development':
+  default:
+    module.exports = require('./config/webpack.dev')({env: 'development'});
+}
