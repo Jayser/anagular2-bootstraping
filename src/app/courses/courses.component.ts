@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'courses',
   template: `
     <div>
-      <h1>home</h1>
+      <h1>courses</h1>
     </div>
   `
 })
-export class HomeComponent {
+export class CoursesComponent {
 
 }
