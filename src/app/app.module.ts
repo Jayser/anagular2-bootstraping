@@ -1,48 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import {
-  NgModule,
-  ApplicationRef
-} from '@angular/core';
-import {
-  removeNgStyles,
-  createNewHosts,
-  createInputTransfer
-} from '@angularclass/hmr';
-import {
-  RouterModule,
-  PreloadAllModules
-} from '@angular/router';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-/*
- * Platform and Environment providers/directives/pipes
- */
 import { ROUTES } from './app.routes';
-// App is our top level component
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses';
-import { HomeComponent } from './home';
-import { NoContentComponent } from './no-content';
+import { FeaturesModule } from './features/features.module';
+import { SharedModule } from './shared/shared.module';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
 @NgModule({
   bootstrap: [ AppComponent ],
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CoursesComponent,
-    NoContentComponent
-  ],
-  imports: [ // import Angular's modules
+  declarations: [ AppComponent ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FeaturesModule,
     BrowserModule,
-    FormsModule,
-    HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ]
 })
+
 export class AppModule {
 
   constructor(public appRef: ApplicationRef) {}
