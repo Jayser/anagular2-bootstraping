@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sh-header',
+  selector: 'cr-header',
   templateUrl: 'header.template.html'
 })
 
