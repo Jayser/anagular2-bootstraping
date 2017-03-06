@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-import { RouterModule, PreloadAllModules } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { ROUTES } from './app.routes';
+import { routes } from './app.routes';
 import { AppComponent } from './app.component';
-import { FeaturesModule } from './features/features.module';
-import { SharedModule } from './shared/shared.module';
+import { FeaturesModule } from './features';
+import { SharedModule } from './shared';
+import { CoreModule } from './core';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -17,10 +17,11 @@ import '../styles/headings.css';
   declarations: [ AppComponent ],
   imports: [
     CommonModule,
+    CoreModule,
     SharedModule,
     FeaturesModule,
     BrowserModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    routes
   ]
 })
 

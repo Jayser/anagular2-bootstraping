@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { LogoModule } from '../logo/logo.module';
-import { LoginModule } from '../login/login.module';
+import { LogoModule } from '../../../shared/components/logo';
+import { LoginModule } from '../../../shared/components/login';
 import { HeaderComponent } from './header.component';
 @NgModule({
   imports: [ LogoModule, LoginModule ],

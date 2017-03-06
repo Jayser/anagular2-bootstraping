@@ -1,22 +1,13 @@
 import { NgModule } from '@angular/core';
 
-import { LoginModule } from './login/login.module';
-import { LogoModule } from './logo/logo.module';
-import { HeaderModule } from './header/header.module';
-import { FooterModule } from './footer/footer.module';
+import { SharedComponentsModule } from './components';
 
 @NgModule({
   imports: [
-    LogoModule,
-    LoginModule,
-    HeaderModule,
-    FooterModule,
+    SharedComponentsModule
   ],
   exports: [
-    LoginModule,
-    LogoModule,
-    HeaderModule,
-    FooterModule
+    SharedComponentsModule
   ]
 })
 
