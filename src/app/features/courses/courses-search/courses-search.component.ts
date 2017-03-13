@@ -5,4 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './courses-search.template.html'
 })
 
-export class CoursesSearchComponent { }
+export class CoursesSearchComponent {
+  public coursesSearchForm = {
+    searchQuery: '',
+    searchPlaceholder: 'Search...'
+  };
+
+  public onSubmit({ value }) {
+    console.log(value);
+  }
+}

@@ -6,13 +6,13 @@
         <div class="media-body">
           <h3 class="mt-0">{{ course.title }}</h3>
           <p>{{ course.description }}</p>
-          <p><b>Duration:</b> {{ course.duration }} | <b>Date:</b> {{ course.date }}</p>
+          <p><b>Duration:</b> {{ course.duration }} | <b>Date:</b> {{ course.creatingDate }}</p>
         </div>
       </div>
     </div>
     <div class="col text-right">
       <button type="button" class="btn btn-primary">Edit</button>
-      <button type="button" class="btn btn-danger">Delete</button>
+      <courses-delete (deleteCourse)="handleDeleteCourse($event)" [course]="course"></courses-delete>
     </div>
   </div>
 </li>

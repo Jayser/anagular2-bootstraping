@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ng2-bootstrap';
 
 import { CoursesViewComponent } from './courses-view';
 import { CoursesAddComponent } from './courses-add';
 import { CoursesSearchComponent } from './courses-search';
 import { CoursesListComponent } from './courses-list';
-import { CoursesListItemComponent } from './courses-list/courses-list-item';
+import { CoursesItemComponent } from './courses-item';
+import { CoursesDeleteComponent } from './courses-delete';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [ ButtonsModule.forRoot(), CommonModule ],
+  imports: [ FormsModule, ButtonsModule.forRoot(), CommonModule ],
   declarations: [
     CoursesViewComponent,
     CoursesAddComponent,
+    CoursesDeleteComponent,
     CoursesSearchComponent,
-    CoursesListItemComponent,
+    CoursesItemComponent,
     CoursesListComponent
   ],
   exports: [ CoursesListComponent ]

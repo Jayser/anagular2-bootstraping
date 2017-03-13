@@ -1,7 +1,12 @@
-<form class="form-inline">
+<form class="form-inline" (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
   <div class="form-group mr-1">
-    <label for="inputPassword2" class="sr-only">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    <input
+      type="text"
+      class="form-control"
+      required
+      [(ngModel)]="coursesSearchForm.searchQuery"
+      placeholder="{{ coursesSearchForm.searchPlaceholder }}"
+      name="searchQuery">
   </div>
-  <button type="submit" class="btn btn-primary">Search</button>
+  <button type="submit" [disabled]="!searchForm.form.valid" class="btn btn-primary">Search</button>
 </form>

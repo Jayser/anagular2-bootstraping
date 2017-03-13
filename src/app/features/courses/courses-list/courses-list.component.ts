@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { course } from '../shared/interfaces/course.interface';
 
 @Component({
   selector: 'courses-list',
@@ -6,14 +7,25 @@ import { Component } from '@angular/core';
   templateUrl: './courses-list.template.html'
 })
 
-export class CoursesListComponent {
-  get courses() {
-    return [
+export class CoursesListComponent implements OnInit {
+  private courses: course[];
+
+  constructor() {
+    this.courses = [];
+  }
+
+  public handleDeleteCourse(course: course[]) {
+    console.info('course to delete is', course);
+  }
+
+  public ngOnInit() {
+    this.courses = [
       {
+        id: 0,
         thumb: 'http://placehold.it/50x50',
         thumbAlt: 'Generic placeholder image',
         title: 'Media heading',
-        date: new Date().getDate(),
+        creatingDate: new Date().getDate(),
         duration: '58 min.',
         description: `
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
@@ -23,10 +35,11 @@ export class CoursesListComponent {
         `
       },
       {
+        id: 1,
         thumb: 'http://placehold.it/50x50',
         thumbAlt: 'Generic placeholder image',
         title: 'Media heading',
-        date: new Date().getDate(),
+        creatingDate: new Date().getDate(),
         duration: '58 min.',
         description: `
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
@@ -36,10 +49,11 @@ export class CoursesListComponent {
         `
       },
       {
+        id: 2,
         thumb: 'http://placehold.it/50x50',
         thumbAlt: 'Generic placeholder image',
         title: 'Media heading',
-        date: new Date().getDate(),
+        creatingDate: new Date().getDate(),
         duration: '58 min.',
         description: `
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
