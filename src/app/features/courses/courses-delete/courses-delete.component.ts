@@ -1,16 +1,20 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { course } from '../shared/interfaces/course.interface';
+import { Component, Input } from '@angular/core';
+
+import { Course } from '../shared/interfaces/course.interface';
+import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
   selector: 'courses-delete',
-  templateUrl: 'courses-delete.template.html'
+  templateUrl: 'courses-delete.template.html',
+  providers: [ CoursesService ]
 })
 
 export class CoursesDeleteComponent {
-  @Input() private course: course[];
-  @Output() private deleteCourse = new EventEmitter();
+  @Input() private course: Course;
 
-  public handleDeleteCourse(course: course[]) {
-    this.deleteCourse.emit(course);
+  constructor(private coursesService: CoursesService) {}
+
+  public handleDeleteCourse(course: Course) {
+    this.coursesService.removeItem(course.id);
   }
 }

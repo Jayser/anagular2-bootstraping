@@ -1,1 +1,10 @@
-<button type="button" (click)="handleDeleteCourse(course)" class="btn btn-danger">Delete</button>
+<template #courseDeleteTemplate>
+    Do you really want to delete this course?
+    <button type="button" (click)="handleDeleteCourse(course)" class="btn btn-danger">
+      Yes
+    </button>
+</template>
+
+<button type="button" class="btn btn-danger" [popover]="courseDeleteTemplate">
+  Delete
+</button>
