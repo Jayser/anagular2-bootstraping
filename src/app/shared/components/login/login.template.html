@@ -1,4 +1,4 @@
 <div class="login">
-  <a routerLink="/login" *ngIf="!isAuthenticated()" routerLinkActive="active" class="sign-in">sign in</a>
-  <span *ngIf="isAuthenticated()" (click)="logout($event)" class="logout">logout</span>
+  <a routerLink="/login" *ngIf="!isAuthenticated" routerLinkActive="active" class="sign-in">sign in</a>
+  <span *ngIf="isAuthenticated" (click)="logout($event)" class="logout">logout</span>
 </div>

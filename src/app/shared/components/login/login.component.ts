@@ -6,20 +6,24 @@ import { AuthorizationService } from '../../../shared/services/authorization';
 @Component({
   selector: 'sh-login',
   styleUrls: ['login.component.scss'],
-  templateUrl: 'login.template.html',
-  providers: [ AuthorizationService ]
+  templateUrl: 'login.template.html'
 })
 
 export class LoginComponent {
-  constructor(private authorizationService: AuthorizationService,
-              private router: Router) {}
+  public isAuthenticated: boolean = false;
 
-  public isAuthenticated(): boolean {
-    return this.authorizationService.isAuthenticated();
+  constructor(private authorizationService: AuthorizationService,
+              private router: Router) {
+    authorizationService.stream.subscribe(({ login }) => {
+      this.isAuthenticated = Boolean(login);
+
+      if (!login) {
+        this.router.navigateByUrl('/login');
+      }
+    });
   }
 
   public logout(): void {
     this.authorizationService.logout();
-    this.router.navigateByUrl('/login');
   }
 }
