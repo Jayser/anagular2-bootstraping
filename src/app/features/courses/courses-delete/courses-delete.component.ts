@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { Course } from '../shared/interfaces/course.interface';
 import { CoursesService } from '../shared/services/courses.service';
@@ -6,7 +6,8 @@ import { CoursesService } from '../shared/services/courses.service';
 @Component({
   selector: 'courses-delete',
   templateUrl: 'courses-delete.template.html',
-  providers: [ CoursesService ]
+  providers: [ CoursesService ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CoursesDeleteComponent {

@@ -1,1 +1,1 @@
-export { CoreComponentsModule } from './core-components.module';
+export { CoreComponentsModule } from './core-component.module';

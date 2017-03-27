@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Course } from '../shared/interfaces/course.interface';
 
 import { CoursesService } from '../shared/services/courses.service';
@@ -7,7 +7,8 @@ import { CoursesService } from '../shared/services/courses.service';
   selector: 'courses-list',
   styleUrls: [ './courses-list.component.scss' ],
   templateUrl: './courses-list.template.html',
-  providers: [ CoursesService ]
+  providers: [ CoursesService ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CoursesListComponent implements OnInit {

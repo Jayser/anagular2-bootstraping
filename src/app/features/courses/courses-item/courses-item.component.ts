@@ -1,10 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Course } from '../shared/interfaces/course.interface';
 
 @Component({
   selector: 'courses-list-item',
   styleUrls: ['courses-item.component.scss'],
-  templateUrl: 'courses-item.template.html'
+  templateUrl: 'courses-item.template.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CoursesItemComponent {

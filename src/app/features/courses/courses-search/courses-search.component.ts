@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'courses-search',
-  templateUrl: './courses-search.template.html'
+  templateUrl: './courses-search.template.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class CoursesSearchComponent {

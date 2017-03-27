@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthorizationService } from '../../shared/services/authorization';
 
 @Component({
   selector: 'login',
-  templateUrl: './login.template.html'
+  templateUrl: './login.template.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class LoginComponent {
