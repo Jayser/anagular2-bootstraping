@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { AuthorizationService } from './services/authorization';
 import { SharedComponentsModule } from './components';
 
 @NgModule({
@@ -8,6 +9,9 @@ import { SharedComponentsModule } from './components';
   ],
   exports: [
     SharedComponentsModule
+  ],
+  providers: [
+    AuthorizationService
   ]
 })
 
