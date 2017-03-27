@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { HeaderModule } from '../../components/header';
-import { FooterModule } from '../../components/footer';
+import { CoreComponentsModule } from '../../components';
 import { ScreensBaseComponent } from './screens-base.component';
 
 @NgModule({
-  imports: [ RouterModule, HeaderModule, FooterModule ],
+  imports: [ RouterModule, CoreComponentsModule ],
   declarations: [ ScreensBaseComponent ],
   exports: [ ScreensBaseComponent ]
 })
