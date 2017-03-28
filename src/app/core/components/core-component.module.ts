@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderModule } from './header';
 import { FooterModule } from './footer';
 
-import { LoaderBlockComponent } from './loader-block';
 
 @NgModule({
   imports: [
@@ -12,11 +11,7 @@ import { LoaderBlockComponent } from './loader-block';
     HeaderModule,
     FooterModule,
   ],
-  declarations: [
-    LoaderBlockComponent
-  ],
   exports: [
-    LoaderBlockComponent,
     HeaderModule,
     FooterModule
   ]

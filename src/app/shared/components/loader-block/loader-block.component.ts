@@ -1,9 +1,10 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
-import { LoaderBlockService } from '../../../shared/services/loader-block'
+import { LoaderBlockService } from '../../services'
 
 @Component({
   selector: 'cr-loader-block',
+  styleUrls: [ './loader-block.component.scss' ],
   templateUrl: 'loader-block.template.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
