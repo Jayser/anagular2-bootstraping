@@ -1,6 +1,6 @@
 <div class="row offset-tb-20">
   <div class="col text-left p-sm-0">
-    <courses-search></courses-search>
+    <courses-search (onFilter)="onFilter($event)"></courses-search>
   </div>
   <div class="col text-right p-sm-0">
     <courses-add></courses-add>
@@ -8,7 +8,7 @@
 </div>
 <div class="row">
   <div class="col">
-    <courses-list></courses-list>
+    <courses-list [filterBy]="filterBy"></courses-list>
   </div>
 </div>
 

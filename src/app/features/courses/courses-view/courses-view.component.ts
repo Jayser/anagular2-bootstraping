@@ -7,4 +7,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class CoursesViewComponent { }
+export class CoursesViewComponent {
+  public filterBy: string;
+
+  onFilter(query: string) {
+    this.filterBy = query;
+  }
+}

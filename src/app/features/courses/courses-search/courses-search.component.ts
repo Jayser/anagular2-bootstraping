@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, ChangeDetectionStrategy, Output } from '@angular/core';
 
 @Component({
   selector: 'courses-search',
@@ -7,12 +7,14 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 
 export class CoursesSearchComponent {
+  @Output() onFilter = new EventEmitter<string>();
+
   public coursesSearchForm = {
     searchQuery: '',
     searchPlaceholder: 'Search...'
   };
 
-  public onSubmit({ value }) {
-    console.log(value);
+  public onSubmit({ value: { searchQuery } }) {
+    this.onFilter.emit(searchQuery);
   }
 }

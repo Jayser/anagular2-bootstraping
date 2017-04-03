@@ -3,10 +3,9 @@
     <input
       type="text"
       class="form-control"
-      required
       [(ngModel)]="coursesSearchForm.searchQuery"
       placeholder="{{ coursesSearchForm.searchPlaceholder }}"
       name="searchQuery">
   </div>
-  <button type="submit" [disabled]="!searchForm.form.valid" class="btn btn-primary">Search</button>
+  <button type="submit" class="btn btn-primary">Search</button>
 </form>
