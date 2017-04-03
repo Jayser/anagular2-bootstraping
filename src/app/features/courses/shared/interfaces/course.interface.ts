@@ -4,6 +4,7 @@ export interface Course {
   thumbAlt: string,
   title: string,
   creatingDate: number,
-  duration: string,
+  topRated: boolean,
+  duration: number,
   description: string
 }

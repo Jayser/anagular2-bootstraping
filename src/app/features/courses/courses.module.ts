@@ -10,6 +10,11 @@ import { CoursesListComponent } from './courses-list';
 import { CoursesItemComponent } from './courses-item';
 import { CoursesDeleteComponent } from './courses-delete';
 
+import { CoursesHighlightDirective } from './courses-item';
+
+import { CoursesDurationPipe } from './courses-item';
+import { CoursesOrderByPipe } from './courses-item';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +28,10 @@ import { CoursesDeleteComponent } from './courses-delete';
     CoursesDeleteComponent,
     CoursesSearchComponent,
     CoursesItemComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    CoursesHighlightDirective,
+    CoursesDurationPipe,
+    CoursesOrderByPipe
   ],
   exports: [ CoursesListComponent ]
 })

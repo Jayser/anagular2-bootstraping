@@ -6,8 +6,9 @@ export const COURSES: Course[] = [
     thumb: 'http://placehold.it/50x50',
     thumbAlt: 'Generic placeholder image',
     title: 'Media heading',
-    creatingDate: new Date().getDate(),
-    duration: '58 min.',
+    creatingDate: 1459667875000,
+    duration: 28,
+    topRated: true,
     description: `
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
@@ -20,8 +21,9 @@ export const COURSES: Course[] = [
     thumb: 'http://placehold.it/50x50',
     thumbAlt: 'Generic placeholder image',
     title: 'Media heading',
-    creatingDate: new Date().getDate(),
-    duration: '58 min.',
+    creatingDate: 1483427875000,
+    duration: 63,
+    topRated: false,
     description: `
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
@@ -34,8 +36,9 @@ export const COURSES: Course[] = [
     thumb: 'http://placehold.it/50x50',
     thumbAlt: 'Generic placeholder image',
     title: 'Media heading',
-    creatingDate: new Date().getDate(),
-    duration: '58 min.',
+    creatingDate: 1491203875000,
+    duration: 130,
+    topRated: true,
     description: `
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. 
           Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 

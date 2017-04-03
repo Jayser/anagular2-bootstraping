@@ -1,12 +1,15 @@
-<li class="course">
+<li class="course" [coursesHighlight]="course.creatingDate">
   <div class="row">
     <div class="col-10">
       <div class="media">
         <img class="d-flex mr-3" src="{{ course.thumb }}" alt="{{ course.thumbAlt }}">
         <div class="media-body">
-          <h3 class="mt-0">{{ course.title }} id#{{ course.id }}</h3>
+          <h3 class="mt-0">{{ course.title | uppercase }} id#{{ course.id }}</h3>
           <p>{{ course.description }}</p>
-          <p><b>Duration:</b> {{ course.duration }} | <b>Date:</b> {{ course.creatingDate }}</p>
+          <p>
+            <b>Duration:</b> {{ course.duration | coursesDuration }}
+            <span *ngIf="course.topRated" ngClass="gold">&#9733;</span> |
+            <b>Date:</b> {{ course.creatingDate | date }}</p>
         </div>
       </div>
     </div>
