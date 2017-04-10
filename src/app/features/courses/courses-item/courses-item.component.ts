@@ -1,4 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Course } from '../shared/interfaces/course.interface';
 
 @Component({
@@ -10,4 +12,10 @@ import { Course } from '../shared/interfaces/course.interface';
 
 export class CoursesItemComponent {
   @Input() public course: Course[];
+
+  constructor(private router: Router) { }
+
+  handleEdit(id) {
+    this.router.navigate(['/edit-course', id]);
+  }
 }

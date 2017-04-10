@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="col text-right">
-      <button type="button" class="btn btn-primary">Edit</button>
+      <button type="button" (click)="handleEdit(course.id)" class="btn btn-primary">Edit</button>
       <courses-delete [course]="course"></courses-delete>
     </div>
   </div>

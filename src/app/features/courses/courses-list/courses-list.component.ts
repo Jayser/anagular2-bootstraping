@@ -8,11 +8,11 @@ import { CoursesService } from '../shared/services/courses.service';
   selector: 'courses-list',
   styleUrls: [ './courses-list.component.scss' ],
   templateUrl: './courses-list.template.html',
-  providers: [ CoursesService, CoursesFilterPipe],
+  providers: [ CoursesFilterPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class CoursesListComponent implements OnInit {
+export class CoursesListComponent implements OnInit, OnChanges {
   @Input() filterBy:string;
 
   public courses: Course[];
@@ -25,6 +25,8 @@ export class CoursesListComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.courses = this.coursesService.getList();
+    this.coursesService.courses.subscribe((courses: Course[]) => {
+      this.courses = courses;
+    });
   }
 }

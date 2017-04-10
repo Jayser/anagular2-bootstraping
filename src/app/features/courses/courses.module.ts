@@ -3,6 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ButtonsModule, PopoverModule } from 'ng2-bootstrap';
 
+import { AddCourseModule } from './add-course';
+import { EditCourseModule } from './edit-course';
+
 import { CoursesViewComponent } from './courses-view';
 import { CoursesAddComponent } from './courses-add';
 import { CoursesSearchComponent } from './courses-search';
@@ -15,8 +18,12 @@ import { CoursesHighlightDirective } from './courses-item';
 import { CoursesDurationPipe } from './courses-item';
 import { CoursesOrderByPipe } from './courses-item';
 
+import { CoursesService } from './shared/services/courses.service';
+
 @NgModule({
   imports: [
+    AddCourseModule,
+    EditCourseModule,
     CommonModule,
     FormsModule,
     PopoverModule.forRoot(),
@@ -24,6 +31,7 @@ import { CoursesOrderByPipe } from './courses-item';
   ],
   declarations: [
     CoursesViewComponent,
+    CoursesAddComponent,
     CoursesAddComponent,
     CoursesDeleteComponent,
     CoursesSearchComponent,
@@ -33,7 +41,11 @@ import { CoursesOrderByPipe } from './courses-item';
     CoursesDurationPipe,
     CoursesOrderByPipe
   ],
-  exports: [ CoursesListComponent ]
+  providers: [ CoursesService ],
+  exports: [
+    CoursesAddComponent,
+    CoursesListComponent
+  ]
 })
 
 export class CoursesModule { }
