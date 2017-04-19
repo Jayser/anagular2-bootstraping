@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import {
   AuthorizationService,
@@ -9,7 +10,8 @@ import { SharedComponentsModule } from './components';
 
 @NgModule({
   imports: [
-    SharedComponentsModule
+    SharedComponentsModule,
+    HttpModule
   ],
   exports: [
     SharedComponentsModule

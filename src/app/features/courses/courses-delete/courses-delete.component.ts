@@ -6,7 +6,6 @@ import { CoursesService } from '../shared/services/courses.service';
 @Component({
   selector: 'courses-delete',
   templateUrl: 'courses-delete.template.html',
-  providers: [ CoursesService ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 

@@ -1,3 +1,3 @@
 export interface AuthorizatonInterface {
-  login: string
+  username: string
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import { ButtonsModule, PopoverModule } from 'ng2-bootstrap';
 
 import { AddCourseModule } from './add-course';
@@ -18,14 +19,13 @@ import { CoursesHighlightDirective } from './courses-item';
 import { CoursesDurationPipe } from './courses-item';
 import { CoursesOrderByPipe } from './courses-item';
 
-import { CoursesService } from './shared/services/courses.service';
-
 @NgModule({
   imports: [
     AddCourseModule,
     EditCourseModule,
     CommonModule,
     FormsModule,
+    HttpModule,
     PopoverModule.forRoot(),
     ButtonsModule.forRoot(),
   ],
@@ -41,7 +41,6 @@ import { CoursesService } from './shared/services/courses.service';
     CoursesDurationPipe,
     CoursesOrderByPipe
   ],
-  providers: [ CoursesService ],
   exports: [
     CoursesAddComponent,
     CoursesListComponent

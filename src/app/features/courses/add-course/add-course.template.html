@@ -16,13 +16,13 @@
 
     <div class="form-group" [ngClass]="{ 'has-error': loginForm.submitted && !creatingDate.valid }">
       <label for="creatingDate">Date*</label>
-      <input type="text" class="form-control" name="creatingDate" [(ngModel)]="model.creatingDate" #creatingDate="ngModel" required />
+      <input type="date" class="form-control" name="creatingDate" [(ngModel)]="model.creatingDate" #creatingDate="ngModel" required />
       <div *ngIf="loginForm.submitted && !creatingDate.valid" class="help-block">Date is required</div>
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error': loginForm.submitted && !duration.valid }">
       <label for="duration">Duration*</label>
-      <input type="text" class="form-control" name="duration" [(ngModel)]="model.duration" #duration="ngModel" required />
+      <input type="number" class="form-control" name="duration" [(ngModel)]="model.duration" #duration="ngModel" required />
       <div *ngIf="loginForm.submitted && !duration.valid" class="help-block">Duration is required</div>
     </div>
 

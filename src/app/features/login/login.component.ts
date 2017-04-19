@@ -14,14 +14,14 @@ export class LoginComponent {
 
   constructor(private authorizationService: AuthorizationService,
               private router: Router) {
-    authorizationService.stream.subscribe(({ login }) => {
-      if (login) {
+    authorizationService.stream.subscribe(({ username }) => {
+      if (username) {
         this.router.navigateByUrl('/courses');
       }
     })
   }
 
   public onSubmit({ value: { username, password } }) {
-    this.authorizationService.login(username, password);
+    this.authorizationService.login({username });
   }
 }

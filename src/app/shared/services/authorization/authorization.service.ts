@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { Http, Response } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 
 import { AuthorizatonInterface } from './authorization.interface';
 import { LoaderBlockService } from '../loader-block';
@@ -11,36 +17,39 @@ export class AuthorizationService {
   public userInfo: AuthorizatonInterface | null;
   public stream;
 
-  constructor(private loaderBlockService: LoaderBlockService) {
+  constructor(private http: Http,
+              private loaderBlockService: LoaderBlockService) {
     const userInfo = localStorage.getItem(CONSTANTS.AUTH.STORAGE_NAME);
 
     this.stream = this.subject.asObservable();
 
-    this.stream.subscribe(() => {
-      this.loaderBlockService.hide();
-    });
-
     if (userInfo) {
       this.userInfo = JSON.parse(userInfo);
+      this.login(this.userInfo);
     }
   }
 
-  public login(login: string, password: string): void {
-    this.loaderBlockService.show();
-    if (login && password) {
-      setTimeout(() => {
-        this.subject.next({ login });
-      }, 2000);
-      this.userInfo = { login };
-      localStorage.setItem(CONSTANTS.AUTH.STORAGE_NAME, JSON.stringify(this.userInfo));
+  public login({ username}): void {
+    if (username) {
+      this.loaderBlockService.show();
+
+      this.http.get(`http://ng2mp.getsandbox.com/users/${username}`)
+        .map((res) => res.json())
+        .catch((error: Response | any = '') => {
+          this.loaderBlockService.hide();
+          return Observable.throw(error.toString());
+        })
+        .subscribe(({ username }) => {
+          this.loaderBlockService.hide();
+          this.subject.next({ username });
+          this.userInfo = { username };
+          localStorage.setItem(CONSTANTS.AUTH.STORAGE_NAME, JSON.stringify(this.userInfo));
+        });
     }
   }
 
   public logout(): void {
-    this.loaderBlockService.show();
-    setTimeout(() => {
-      this.subject.next({});
-    }, 2000);
+    this.subject.next({});
     this.userInfo = null;
     localStorage.removeItem(CONSTANTS.AUTH.STORAGE_NAME);
   }

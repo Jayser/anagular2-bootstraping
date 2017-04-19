@@ -16,10 +16,10 @@ export class LoginComponent {
   constructor(private authorizationService: AuthorizationService,
               private cd: ChangeDetectorRef,
               private router: Router) {
-    authorizationService.stream.subscribe(({ login }) => {
-      this.isAuthenticated = Boolean(login);
+    authorizationService.stream.subscribe(({ username }) => {
+      this.isAuthenticated = Boolean(username);
 
-      if (!login) {
+      if (!username) {
         this.router.navigateByUrl('/login');
       }
 

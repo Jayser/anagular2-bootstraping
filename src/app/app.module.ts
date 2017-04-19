@@ -9,6 +9,8 @@ import { FeaturesModule } from './features';
 import { SharedModule } from './shared';
 import { CoreModule } from './core';
 
+import { CoursesService } from './features/courses/shared/services/courses.service';
+
 import '../styles/styles.scss';
 import '../styles/headings.css';
 
@@ -22,7 +24,8 @@ import '../styles/headings.css';
     FeaturesModule,
     BrowserModule,
     routes
-  ]
+  ],
+  providers: [ CoursesService ],
 })
 
 export class AppModule {

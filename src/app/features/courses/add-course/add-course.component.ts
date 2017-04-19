@@ -21,7 +21,7 @@ export class AddCourseComponent {
 
   public onSubmit({ value: { title, creatingDate, duration, description } }) {
     this.coursesService.createItem({
-      id: this.coursesService.size(),
+      id: Math.round(0 + Math.random() * (1000000 - 0)),
       thumb: 'http://placehold.it/50x50',
       thumbAlt: '',
       title,
