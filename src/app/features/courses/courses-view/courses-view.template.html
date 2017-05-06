@@ -1,14 +1,6 @@
-<div class="row offset-tb-20">
-  <div class="col text-left p-sm-0">
-    <courses-search (onFilter)="onFilter($event)"></courses-search>
-  </div>
-  <div class="col text-right p-sm-0">
-    <courses-add></courses-add>
-  </div>
-</div>
 <div class="row">
   <div class="col">
-    <courses-list [filterBy]="filterBy"></courses-list>
+    <router-outlet></router-outlet>
   </div>
 </div>
 

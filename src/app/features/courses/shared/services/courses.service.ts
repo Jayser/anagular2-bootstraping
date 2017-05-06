@@ -19,10 +19,6 @@ export class CoursesService {
   constructor(private http: Http,
               private loaderBlockService: LoaderBlockService) {
     this.getCourses();
-
-    this.courses.subscribe((value) => {
-      console.log('====>', value)
-    })
   }
 
   getCourses(): void {

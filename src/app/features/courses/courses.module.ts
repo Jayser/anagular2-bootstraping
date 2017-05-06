@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
@@ -21,6 +22,7 @@ import { CoursesOrderByPipe } from './courses-item';
 
 @NgModule({
   imports: [
+    RouterModule,
     AddCourseModule,
     EditCourseModule,
     CommonModule,

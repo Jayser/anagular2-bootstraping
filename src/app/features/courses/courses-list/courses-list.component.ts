@@ -12,9 +12,7 @@ import { CoursesService } from '../shared/services/courses.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class CoursesListComponent implements OnInit, OnChanges {
-  @Input() filterBy:string;
-
+export class CoursesListComponent implements OnInit {
   public courses: Course[];
   public raw: Course[];
 
@@ -22,15 +20,15 @@ export class CoursesListComponent implements OnInit, OnChanges {
               private coursesFilterPipe: CoursesFilterPipe,
               private cd: ChangeDetectorRef) { }
 
-  ngOnChanges() {
-    this.courses = this.coursesFilterPipe.transform(this.raw, this.filterBy);
+  onFilter(query: string) {
+    this.courses = this.coursesFilterPipe.transform(this.raw, query);
+    //this.cd.markForCheck();
   }
 
   public ngOnInit() {
     this.coursesService.courses.subscribe((courses: Course[]) => {
       this.courses = courses;
       this.raw = this.courses;
-      console.log('subscribe')
       this.cd.markForCheck();
     });
   }

@@ -16,6 +16,6 @@ export class CoursesItemComponent {
   constructor(private router: Router) { }
 
   handleEdit(id) {
-    this.router.navigate(['/edit-course', id]);
+    this.router.navigate(['/courses/', id]);
   }
 }

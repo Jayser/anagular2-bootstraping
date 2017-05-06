@@ -12,6 +12,6 @@ export class CoursesAddComponent {
   constructor(private router: Router) { }
 
   handleAddCourse() {
-    this.router.navigateByUrl('/add-course');
+    this.router.navigateByUrl('/courses/new');
   }
 }

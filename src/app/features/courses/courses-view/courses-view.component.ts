@@ -8,9 +8,4 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 
 export class CoursesViewComponent {
-  public filterBy: string;
-
-  onFilter(query: string) {
-    this.filterBy = query;
-  }
 }
